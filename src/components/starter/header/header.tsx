@@ -21,7 +21,7 @@ export default component$(() => {
           </div>
         </div>
       </nav>
-      <div class="m-auto bg-lightgrayishblue w-[90%] h-1 "></div>
+      <div class="m-auto bg-lightgrayishblue w-full h-1 "></div>
     </>
   );
 });
