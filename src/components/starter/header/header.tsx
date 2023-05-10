@@ -12,7 +12,7 @@ export default component$(() => {
           <Link class="hover:text-verydarkblue">About</Link>
           <Link class="hover:text-verydarkblue">Contact</Link>
         </ul>{" "}
-        <div class="flex justify-end items-center space-x-10 ml-2 cursor-pointer ">
+        <div class="flex justify-end items-center space-x-10 ml-2 cursor-pointer">
           <div class="ml-60">
             <img src="images/icon-cart.svg" alt="cart" class="" />
           </div>

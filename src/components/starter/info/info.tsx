@@ -22,12 +22,16 @@ export default component$(() => {
           50%{" "}
         </h3>
       </div>
-      <h5 class="text-lg text-grayishblue line-through mt-2">$250.00</h5>
+      <h5 class="text-md text-grayishblue line-through mt-2">$250.00</h5>
 
       <div>
-        <button>-</button>
+        <button>
+          <img src="images/icon-minus.svg" alt="" />
+        </button>
         <input type="number" />
-        <button>+</button>
+        <button>
+          <img src="images/icon-plus.svg" alt="" />
+        </button>
         <button>
           {" "}
           <img src="images/icon-cart.svg" alt="cart" class="" />
