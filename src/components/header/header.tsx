@@ -1,19 +1,21 @@
 import { component$, useSignal } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
-export default component$(() => {
-  const isOpenCart = useSignal(true);
 
+import { Link } from "@builder.io/qwik-city";
+
+export default component$(() => {
+  const isOpenCart = useSignal(false);
+  const linkItems = ["Collections", "Men", "Women", "About", "Contact"];
   return (
     <>
       <nav class="flex items-center justify-start w-full h-15 p-7 space-x-10">
         {/* left side */}
         <img src="images/logo.svg" alt="logo" width={150} />
-        <ul class="flex space-x-20 text-darkgrayishblue cursor-pointer">
-          <Link class="hover:text-verydarkblue">Collections</Link>
-          <Link class="hover:text-verydarkblue">Men</Link>
-          <Link class="hover:text-verydarkblue">Women</Link>
-          <Link class="hover:text-verydarkblue">About</Link>
-          <Link class="hover:text-verydarkblue">Contact</Link>
+        <ul class=" relative flex space-x-20 text-darkgrayishblue cursor-pointer ">
+          {linkItems.map((item, id) => (
+            <button key={id}>
+              <Link class="hover:text-verydarkblue">{item}</Link>
+            </button>
+          ))}
         </ul>{" "}
         {/* right side */}
         <div class="relative flex justify-end items-center space-x-1 ml-2 cursor-pointer ">

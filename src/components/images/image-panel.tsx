@@ -1,4 +1,4 @@
-import { component$, $, useStore } from "@builder.io/qwik";
+import { component$, useSignal, useStore } from "@builder.io/qwik";
 
 // @ts-ignore
 
@@ -12,26 +12,51 @@ export default component$(() => {
 
   const sliderPicture = useStore(imgs[0]);
 
-  const handleClick = $((index) => {
-    const slider = imgs[index];
-    sliderPicture(slider);
-  });
+  const isOpenPic = useSignal(false);
 
   return (
     <div class="flex-1 w-full">
-      <div class="w-[500px]">
-        <img src={sliderPicture.value} class="rounded-lg object-cover" />
+      <div class="w-[500px] cursor-pointer">
+        <button onClick$={() => (isOpenPic.value = !isOpenPic.value)}>
+          <img src={sliderPicture.value} class="rounded-lg object-cover" />
+
+          {isOpenPic ? (
+            <div class="w-full h-[990px] flex flex-row justify-center items-center backdrop-brightness-50 top-0 left-0  z-9999 absolute">
+              <div class="" onClick$={() => !isOpenPic.value}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-x"
+                >
+                  <line x1="18" x2="6" y1="6" y2="18"></line>
+                  <line x1="6" x2="18" y1="6" y2="18"></line>
+                </svg>
+              </div>
+              <img
+                src={sliderPicture.value}
+                class="rounded-lg object-cover w-[500px]"
+              />
+            </div>
+          ) : null}
+        </button>
       </div>
 
       <div class="flex flex-row justify-evenly  mt-5 w-[500px] cursor-pointer ">
         {" "}
-        {imgs.map((pic, i) => (
-          <div key={pic.id} class="" >
+        {imgs.map((pic) => (
+          <div key={pic.id} class="">
             <img
               src={pic.value}
               alt={pic.value}
               width={100}
-              onClick$={() => handleClick(i)}
+              onClick$={() => sliderPicture.value}
               class="rounded-lg object-cover"
             />
           </div>
