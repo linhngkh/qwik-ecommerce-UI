@@ -17,9 +17,12 @@ export default component$(() => {
   return (
     <div class="flex-1 w-full">
       <div class="w-[500px] cursor-pointer">
-        <img src={sliderPicture.value} class="rounded-lg object-cover" />
+        <button onClick$={() => (isOpenPic.value = true)}>
+          {" "}
+          <img src={sliderPicture.value} class="rounded-lg object-cover" />
+        </button>
 
-        {isOpenPic ? (
+        {isOpenPic.value && (
           <div class="w-full h-[990px] flex flex-col justify-center items-center backdrop-brightness-50 top-0 left-0  z-9999 absolute">
             <div class="">
               {" "}
@@ -50,7 +53,7 @@ export default component$(() => {
               />
             </div>
           </div>
-        ) : null}
+        )}
       </div>
 
       <div class="flex flex-row justify-evenly  mt-5 w-[500px] cursor-pointer ">
