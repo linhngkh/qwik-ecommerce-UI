@@ -19,9 +19,11 @@ export default component$(() => {
 
   return (
     <div class="flex-1 w-full">
-      <img src={sliderPicture.value} width={500} class="rounded-lg" />
+      <div class="w-[500px]">
+        <img src={sliderPicture.value} class="rounded-lg" />
+      </div>
 
-      <div class="flex flex-row justify-evenly mt-5 rounded-lg ">
+      <div class="flex flex-row justify-evenly  mt-5 rounded-lg w-[500px]">
         {" "}
         {imgs.map((pic, i) => (
           <img

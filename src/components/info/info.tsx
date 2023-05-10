@@ -1,6 +1,9 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStore } from "@builder.io/qwik";
+import Cart from "../cart/cart";
 
 export default component$(() => {
+  const state = useStore({ count: 0 });
+
   return (
     <div class="flex-1">
       <h1 class="uppercase font-semibold text-orange">sneaker company</h1>
@@ -24,19 +27,18 @@ export default component$(() => {
       </div>
       <h5 class="text-md text-grayishblue line-through mt-2">$250.00</h5>
 
-      <div>
-        <button>
-          <img src="images/icon-minus.svg" alt="" />
-        </button>
-        <input type="number" />
-        <button>
-          <img src="images/icon-plus.svg" alt="" />
-        </button>
-        <button>
-          {" "}
-          <img src="images/icon-cart.svg" alt="cart" class="" />
-          Add to cart
-        </button>
+      <div class="rounded-md flex space-x-3 mt-6 ">
+        <div class="py-2 px-3 bg-lightgrayishblue rounded-md">
+          <button class="" onClick$={() => state.count--}>
+            <img src="images/icon-minus.svg" alt="" />
+          </button>
+          <input class="text-center justify-center w-10" value={state.count} />
+          <button class="" onClick$={() => state.count++}>
+            <img src="images/icon-plus.svg" alt="" />
+          </button>
+        </div>
+
+        <Cart />
       </div>
     </div>
   );
