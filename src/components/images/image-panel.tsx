@@ -20,20 +20,21 @@ export default component$(() => {
   return (
     <div class="flex-1 w-full">
       <div class="w-[500px]">
-        <img src={sliderPicture.value} class="rounded-lg" />
+        <img src={sliderPicture.value} class="rounded-lg object-cover" />
       </div>
 
-      <div class="flex flex-row justify-evenly  mt-5 rounded-lg w-[500px]">
+      <div class="flex flex-row justify-evenly  mt-5 w-[500px] cursor-pointer ">
         {" "}
         {imgs.map((pic, i) => (
-          <img
-            key={pic.id}
-            src={pic.value}
-            alt={pic.value}
-            width={100}
-            onClick$={() => handleClick(i)}
-            class="rounded-lg"
-          />
+          <div key={pic.id} class="" >
+            <img
+              src={pic.value}
+              alt={pic.value}
+              width={100}
+              onClick$={() => handleClick(i)}
+              class="rounded-lg object-cover"
+            />
+          </div>
         ))}
       </div>
     </div>

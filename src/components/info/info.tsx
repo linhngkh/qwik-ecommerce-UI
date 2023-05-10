@@ -1,5 +1,5 @@
 import { component$, useStore } from "@builder.io/qwik";
-import Cart from "../cart/cart";
+import ButtonCart from "../cart/cart";
 
 export default component$(() => {
   const state = useStore({ count: 0 });
@@ -38,7 +38,7 @@ export default component$(() => {
           </button>
         </div>
 
-        <Cart />
+        <ButtonCart />
       </div>
     </div>
   );

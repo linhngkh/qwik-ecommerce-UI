@@ -23,9 +23,9 @@ export default component$(() => {
           >
             <img src="images/icon-cart.svg" alt="cart" />
             {isOpenCart.value ? (
-              <div class="absolute top-12  w-[240px] h-[150px] rounded-sm drop-shadow-3xl bg-orange">
-                <h1 class=" flex p-2 text-white">Cart</h1>
-                <div class="m-auto bg-grayishblue w-full h-1 "></div>
+              <div class="absolute top-12  w-[270px] h-[180px] rounded-sm drop-shadow-3xl bg-white">
+                <h1 class=" flex p-2 ">Cart</h1>
+                <div class="m-auto bg-grayishblue w-full h-[0.2px] "></div>
               </div>
             ) : null}
           </button>
