@@ -27,7 +27,7 @@ export default component$(() => {
             <div class="">
               {" "}
               <button
-                onClick$={() => (isOpenPic.value = !isOpenPic.value)}
+                onClick$={() => (isOpenPic.value = false)}
                 class="absolute top-40 cursor-pointer"
               >
                 <svg

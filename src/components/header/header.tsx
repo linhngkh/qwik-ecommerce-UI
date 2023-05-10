@@ -18,7 +18,7 @@ export default component$(() => {
           ))}
         </ul>{" "}
         {/* right side */}
-        <div class="relative flex justify-end items-center space-x-1 ml-2 cursor-pointer ">
+        <div class="relative flex justify-around items-center space-x-1 cursor-pointer ">
           <button
             class="ml-60 w-[100px]"
             onClick$={() => (isOpenCart.value = !isOpenCart.value)}
