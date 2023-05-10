@@ -1,6 +1,8 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 export default component$(() => {
+  const isOpenCart = useSignal(false);
+
   return (
     <>
       <nav class="flex items-center justify-start w-full h-15 p-7 space-x-10">
@@ -13,9 +15,15 @@ export default component$(() => {
           <Link class="hover:text-verydarkblue">Contact</Link>
         </ul>{" "}
         <div class="flex justify-end items-center space-x-1 ml-2 cursor-pointer ">
-          <div class="ml-60 w-[100px]">
-            <img src="images/icon-cart.svg" alt="cart" class="" />
-          </div>
+          <button
+            class="ml-60 w-[100px]"
+            onClick$={() => (isOpenCart.value = !isOpenCart.value)}
+          >
+            <img src="images/icon-cart.svg" alt="cart" />
+            {isOpenCart.value ? (
+              <div class="w-5 h-3 rounded-md drop-shadow-2xl "></div>
+            ) : null}
+          </button>
           <div class="border-4 rounded-full hover:border-orange w-[50px]">
             <img src="images/image-avatar.png" alt="avatar" />
           </div>
