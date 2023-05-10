@@ -1,5 +1,4 @@
 import { component$, useStore } from "@builder.io/qwik";
-import ButtonCart from "../cart/cart";
 
 export default component$(() => {
   const state = useStore({ count: 0 });
@@ -37,8 +36,15 @@ export default component$(() => {
             <img src="images/icon-plus.svg" alt="" />
           </button>
         </div>
-
-        <ButtonCart />
+        {/* CART */}
+        <button
+          class="bg-orange py-2 px-10 flex gap-4 text-white rounded-md hover:drop-shadow-4xl"
+          onClick$={() => state.count}
+        >
+          {" "}
+          <img src="images/icon-cart.svg" alt="cart" class="text-white" />
+          Add to cart
+        </button>
       </div>
     </div>
   );

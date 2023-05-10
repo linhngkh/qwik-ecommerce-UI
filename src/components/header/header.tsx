@@ -3,7 +3,7 @@ import { component$, useSignal } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
-  const isOpenCart = useSignal(false);
+  const isOpenCart = useSignal(true);
   const linkItems = ["Collections", "Men", "Women", "About", "Contact"];
   return (
     <>
@@ -24,10 +24,16 @@ export default component$(() => {
             onClick$={() => (isOpenCart.value = !isOpenCart.value)}
           >
             <img src="images/icon-cart.svg" alt="cart" />
+            {/* cart */}
             {isOpenCart.value ? (
-              <div class="absolute top-12  w-[270px] h-[180px] rounded-sm drop-shadow-3xl bg-white">
+              <div class="absolute top-12 right-2  w-[290px] h-[200px] rounded-sm drop-shadow-3xl bg-white">
                 <h1 class=" flex p-2 ">Cart</h1>
-                <div class="m-auto bg-grayishblue w-full h-[0.2px] "></div>
+                <div class=" bg-grayishblue w-full h-[0.2px]">
+                  <div class="flex items-center justify-center h-[140px]">
+                    {" "}
+                    <p class="">Your cart is empty.</p>
+                  </div>
+                </div>
               </div>
             ) : null}
           </button>

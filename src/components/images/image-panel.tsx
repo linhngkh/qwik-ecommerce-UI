@@ -12,7 +12,7 @@ export default component$(() => {
 
   const sliderPicture = useStore(imgs[0]);
 
-  const isOpenPic = useSignal(true);
+  const isOpenPic = useSignal(false);
 
   return (
     <div class="flex-1 w-full">
@@ -21,7 +21,7 @@ export default component$(() => {
           {" "}
           <img src={sliderPicture.value} class="rounded-lg object-cover" />
         </button>
-
+        {/* modal */}
         {isOpenPic.value && (
           <div class="w-full h-[990px] flex flex-col justify-center items-center backdrop-brightness-50 top-0 left-0  z-9999 absolute">
             <div class="">
