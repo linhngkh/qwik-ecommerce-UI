@@ -7,10 +7,10 @@ export default component$(() => {
   const linkItems = ["Collections", "Men", "Women", "About", "Contact"];
   return (
     <>
-      <nav class="flex items-center justify-start w-full h-15 p-7 space-x-10">
+      <nav class="flex items-center justify-start w-full h-15 py-7 ">
         {/* left side */}
-        <img src="images/logo.svg" alt="logo" width={150} />
-        <ul class=" relative flex space-x-20 text-darkgrayishblue cursor-pointer ">
+        <img src="images/logo.svg" alt="logo" width={150} class="mr-10" />
+        <ul class=" relative flex space-x-10 text-darkgrayishblue cursor-pointer ">
           {linkItems.map((item, id) => (
             <button key={id}>
               <Link class="hover:text-verydarkblue">{item}</Link>
@@ -18,9 +18,9 @@ export default component$(() => {
           ))}
         </ul>{" "}
         {/* right side */}
-        <div class="relative flex justify-around items-center space-x-1 cursor-pointer ">
+        <div class="relative flex justify-between items-center space-x-1 cursor-pointer ">
           <button
-            class="ml-60 w-[100px]"
+            class="w-[100px] ml-60"
             onClick$={() => (isOpenCart.value = !isOpenCart.value)}
           >
             <img src="images/icon-cart.svg" alt="cart" />
