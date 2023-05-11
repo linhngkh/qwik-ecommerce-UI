@@ -3,7 +3,7 @@ import { component$, useSignal } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
-  const isOpenCart = useSignal(true);
+  const isOpenCart = useSignal(false);
   const linkItems = ["Collections", "Men", "Women", "About", "Contact"];
   return (
     <>
@@ -37,6 +37,7 @@ export default component$(() => {
               </div>
             ) : null}
           </button>
+
           {/* avatar */}
           <div class="border-4 rounded-full hover:border-orange w-[50px]">
             <img src="images/image-avatar.png" alt="avatar" />

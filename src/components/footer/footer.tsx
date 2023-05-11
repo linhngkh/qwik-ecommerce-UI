@@ -5,7 +5,7 @@ export default component$(() => {
   const serverTime = useServerTimeLoader();
 
   return (
-    <footer class="sticky flex items-center justify-center h-20 text-black  bottom-0 m-auto w-auto mt-0">
+    <footer class="fixed bottom-0 inset-x-0 max-w-max mx-auto">
       <div>
         <a href="https://github.com/linhngkh" target="_blank">
           <span>Made with ♡ by Linh Nguyen</span>
