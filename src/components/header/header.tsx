@@ -5,9 +5,10 @@ import { Link } from "@builder.io/qwik-city";
 export default component$(() => {
   const isOpenCart = useSignal(false);
   const linkItems = ["Collections", "Men", "Women", "About", "Contact"];
+  const flexBetween = `flex items-center justify-between `;
   return (
     <>
-      <nav class="flex items-center justify-start w-full h-15 py-7 ">
+      <nav class={`${flexBetween} w-full h-15 py-7 mx-auto`}>
         {/* left side */}
         <img src="images/logo.svg" alt="logo" width={150} class="mr-10" />
         <ul class=" relative flex space-x-10 text-darkgrayishblue cursor-pointer ">
@@ -18,7 +19,7 @@ export default component$(() => {
           ))}
         </ul>{" "}
         {/* right side */}
-        <div class="relative flex justify-between items-center space-x-1 cursor-pointer ">
+        <div class={`${flexBetween} relative  space-x-1 cursor-pointer`}>
           <button
             class="w-[100px] ml-60"
             onClick$={() => (isOpenCart.value = !isOpenCart.value)}

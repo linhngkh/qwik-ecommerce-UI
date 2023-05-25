@@ -12,7 +12,7 @@ export default component$(() => {
 
   const sliderPicture = useStore(imgs[0]);
 
-  const isOpenPic = useSignal(true);
+  const isOpenPic = useSignal(false);
 
   return (
     <div class="flex-1 w-full">
