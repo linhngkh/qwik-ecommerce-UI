@@ -4,6 +4,7 @@ import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
   const isOpenCart = useSignal(false);
+
   const linkItems = ["Collections", "Men", "Women", "About", "Contact"];
   const flexBetween = `flex items-center justify-between `;
   return (
