@@ -4,7 +4,7 @@ import Info from "../info/info";
 
 export default component$(() => {
   return (
-    <section class="flex mt-10 px-10">
+    <section class="flex mt-10">
       <ImagePanel />
       <Info />
     </section>

@@ -92,7 +92,7 @@ export default component$(() => {
         )}
       </div>
 
-      <div class="flex flex-row justify-evenly  mt-5 w-[500px] cursor-pointer ">
+      <div class="flex flex-row justify-between  mt-5 w-[500px] cursor-pointer ">
         {" "}
         {imgs.map((pic) => (
           <div key={pic.id} class="">
