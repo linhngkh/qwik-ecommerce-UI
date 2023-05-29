@@ -12,7 +12,7 @@ export default component$(() => {
 
   const sliderPicture = useStore(imgs[0]);
 
-  const isOpenPic = useSignal(false);
+  const isOpenPic = useSignal(true);
 
   return (
     <div class="flex-1 w-full">
@@ -24,11 +24,12 @@ export default component$(() => {
         {/* modal */}
         {isOpenPic.value && (
           <div class=" w-full h-[990px] flex flex-col justify-center items-center backdrop-brightness-50 top-0 left-0  z-9999 absolute">
-            <div class="">
+            <div class="relative">
               <div class="">
+                {/* close */}
                 <button
                   onClick$={() => (isOpenPic.value = false)}
-                  class="absolute top-40 right-[35%] cursor-pointer "
+                  class=" top-30 right-[30%] cursor-pointer "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +56,11 @@ export default component$(() => {
                   class="rounded-lg object-cover w-[500px]"
                 />
               </div>
-              <button class="absolute top-[50%] left-[34.5%] bg-white rounded-full w-8 h-8 flex items-center justify-center ">
+              {/* left */}
+              <button
+                class="absolute top-[50%] left-[-4%] bg-white rounded-full w-8 h-8 flex items-center justify-center "
+                onClick$={() => sliderPicture.id > 0 && sliderPicture.id - 1}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -71,7 +76,14 @@ export default component$(() => {
                   <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
               </button>
-              <button class="absolute top-[50%] right-[34.5%]  bg-white rounded-full  w-8 h-8 flex items-center justify-center">
+
+              {/* right */}
+              <button
+                class="absolute  top-[50%] right-[-4%]  bg-white rounded-full  w-8 h-8 flex items-center justify-center"
+                onClick$={() =>
+                  sliderPicture.id < imgs.length && sliderPicture.id + 1
+                }
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
