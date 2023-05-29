@@ -5,11 +5,11 @@ export default component$(() => {
   const serverTime = useServerTimeLoader();
 
   return (
-    <footer class="fixed bottom-0 inset-x-0 max-w-max mx-auto pb-3">
-      <div>
+    <footer class="inset-x-0 max-w-max mx-auto p-10">
+      <div class="font-bold">
         <a href="https://github.com/linhngkh" target="_blank">
           <span>Made with ♡ by Linh Nguyen</span>
-          <span class="space-x-2">|</span>
+          <span> | </span>
           <span>{serverTime.value.date}</span>
         </a>
       </div>
