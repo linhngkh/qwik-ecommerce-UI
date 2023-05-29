@@ -29,7 +29,7 @@ export default component$(() => {
                 {/* close */}
                 <button
                   onClick$={() => (isOpenPic.value = false)}
-                  class=" top-30 right-[30%] cursor-pointer "
+                  class="relative  left-[95%] cursor-pointer "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
